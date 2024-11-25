@@ -4,7 +4,7 @@ class Television:
     MIN_CHANNEL: int = 0
     MAX_CHANNEL: int = 3
 
-    def __init__(self):
+    def __init__(self) -> None:
         '''
         Creates a new television item
 
@@ -21,13 +21,13 @@ class Television:
         self.__channel: int = Television.MIN_CHANNEL
         self.__previous_volume: int = self.__volume
 
-    def power(self):
+    def power(self) -> None:
         '''
         Turns the TV on and off
         '''
         self.__status = not self.__status
 
-    def mute(self):
+    def mute(self) -> None:
         '''
         Mutes or unmutes the TV
 
@@ -44,7 +44,7 @@ class Television:
                 self.__previous_volume: int = self.__volume
                 self.__volume: int = 0
 
-    def channel_up(self):
+    def channel_up(self) -> None:
         '''
         Increase the channel number by 1.
 
@@ -58,7 +58,7 @@ class Television:
             else:
                 self.__channel: int = Television.MIN_CHANNEL
 
-    def channel_down(self):
+    def channel_down(self) -> None:
         '''
         Decrease the channel number by 1.
 
@@ -73,7 +73,7 @@ class Television:
             else:
                 self.__channel: int = Television.MAX_CHANNEL
 
-    def volume_up(self):
+    def volume_up(self) -> None:
         '''
         Increase the volume by 1.
 
@@ -89,7 +89,7 @@ class Television:
             if self.__volume < Television.MAX_VOLUME:
                 self.__volume += 1
 
-    def volume_down(self):
+    def volume_down(self) -> None:
         '''
         Decrease the volume by 1.
 
@@ -105,7 +105,7 @@ class Television:
             if self.__volume > Television.MIN_VOLUME:
                 self.__volume -= 1
 
-    def __str__(self):
+    def __str__(self) -> str:
         '''
         Returns a string with current TV details
 
